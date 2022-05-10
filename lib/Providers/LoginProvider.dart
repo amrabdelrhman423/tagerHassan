@@ -9,7 +9,6 @@ class LoginProvider extends ChangeNotifier{
     isSecure=!isSecure;
     notifyListeners();
     controller.selection = TextSelection.fromPosition(TextPosition(offset: controller.text.length));
-
   }
 
 }

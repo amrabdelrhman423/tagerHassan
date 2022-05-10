@@ -11,7 +11,7 @@ class SingupTextForm extends StatelessWidget {
       this.validator,
       this.suffixIcon,
       this.prefixIcon,
-        this.textAlign=TextAlign.justify,
+      this.textAlign=TextAlign.justify,
       this.secure = false,
       this.textDirection,
       this.readOnly = false,

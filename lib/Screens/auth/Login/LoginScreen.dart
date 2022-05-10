@@ -58,8 +58,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25,vertical: 0),
                   child: SingupTextForm(
-                    hintText: "ادخل رقم الهوية",
-                    textInputType: TextInputType.number,
+                    hintText: "ادخل البريد الالكتروني",
+                    textInputType: TextInputType.emailAddress,
                     prefixIcon: Padding(
                       padding: const EdgeInsets.symmetric(vertical: 18),
                       child: ImageIcon(
@@ -69,12 +69,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     validator: (val){
+                      RegExp regEmail=RegExp("");
                       if(val!.isEmpty){
-                        return "هذا الحقل اجباري";
-                      }else if(val.length!=10) {
-                        return "يجب ان يكون عدد ارقام الهوية 10 ارقام";
-                      }else{
-                        return null;
+                        return "هذا الحقل فارغ";
+                      }else {
+                      return  validateEmail(val, "يجب ادخال الايميل بطريقة صحيحه ");
                       }
                     },
                   ),
